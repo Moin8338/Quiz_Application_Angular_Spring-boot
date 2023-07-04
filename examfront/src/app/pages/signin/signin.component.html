@@ -1,0 +1,14 @@
+<section>
+    <div class="cont">
+        <div class="form">
+            <form (ngSubmit)="formSubmit()">
+                <h1>Login</h1>
+                <input type="text" class="user" [(ngModel)]="loginData.username" autocomplete="off" name="username" placeholder="Username" />
+                <input type="password" class="pass" [(ngModel)]="loginData.password" autocomplete="off" name="password" placeholder="Password" />
+                <button type="submit" class="login" >Login</button>
+                <a routerLink="/signup">Signup here ?</a>
+            </form>
+        </div>
+    </div>
+</section>
+

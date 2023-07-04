@@ -1,0 +1,225 @@
+/* .example-container {
+  min-height: calc(100vh - 65px);
+  width: 100%;
+}
+
+
+
+button.menu-btn{
+  padding: .4rem .5rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #3F51B5;
+  color: white;
+  position: absolute;
+  z-index: 9999;
+}
+.content{
+  max-height:calc(100vh - 65px);
+  min-height:calc(100vh - 65px);
+  border-radius: 5px;
+  background-color: antiquewhite;
+  overflow-y: auto;
+  padding: 1rem 3rem;
+} */
+
+
+p {
+  color: black;
+}
+
+/*=============== GOOGLE FONTS ===============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*=============== VARIABLES ===============*/
+
+
+
+/*=============== BASE ===============*/
+
+.user-dashboard {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+}
+
+.user-dashboard main {
+  max-width: 100%;
+  margin-left: auto;
+  padding-right: var(--main-padding);
+  padding-left: calc(var(--nav-width-collapsed) + var(--main-padding));
+}
+
+/*=============== NAVBAR ===============*/
+
+.user-dashboard .menu-icon {
+  width: 30px;
+  margin: 15px 25px 0px 15px;
+  transition: all 1s ease;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.user-dashboard nav {
+  position: fixed;
+  z-index: 9999;
+  top: 65px;
+  bottom: 0;
+  left: 0;
+  height: calc(100vh - 65px);
+  color: var(--foreground);
+  background: rgba(63, 81, 181,80%);
+  backdrop-filter: blur(5px);
+  width: var(--nav-width-collapsed);
+  overflow: hidden;
+  transition: all 1s ease;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 15px 15px 0;
+}
+
+.user-dashboard nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.user-dashboard nav li {
+  position: relative;
+  display: block;
+}
+
+.user-dashboard .nav-link {
+  position: relative;
+  font-size: 16px;
+  display: table;
+  width: var(--nav-width);
+  padding: 1rem 0 1rem 1rem;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  opacity: 0%;
+}
+
+.user-dashboard .nav-header {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: 600;
+  width: var(--nav-width);
+  transition: all 0.5s ease;
+  opacity: 0%;
+}
+
+.user-dashboard nav:hover {
+  width: 300px;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+}
+
+.user-dashboard nav:hover .nav-link {
+  opacity: 100%;
+  transition: opacity 1s ease;
+}
+
+.user-dashboard nav:hover .nav-header {
+  opacity: 100%;
+  transition: opacity 1s ease;
+}
+
+.user-dashboard nav:hover .menu-icon {
+  transform: rotate(90deg);
+  transition: all 1s ease;
+}
+
+.user-dashboard nav li a:hover {
+  border-left-style: solid;
+  border-width: 4px;
+  border-left-color: var(--accent-color);
+  font-weight: 600;
+  color: white;
+  background: rgba(63, 81, 181,80%) !important;
+  /* background-color: transparent; */
+}
+
+.user-dashboard .nav-item {
+  position: relative;
+  margin-left: 12px;
+}
+
+/*=============== ARTICLES ===============*/
+
+.user-dashboard header {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.user-dashboard article {
+  font-size: 16px;
+  line-height: 2;
+}
+
+/*=============== SCROLLBAR ===============*/
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+/*=============== MEDIA QUERY ===============*/
+
+@media print {
+  .user-dashboard nav {
+    display: none;
+  }
+
+  .user-dashboard {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+
+  .user-dashboard main {
+    padding-left: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+  .user-dashboard nav {
+    width: 60px;
+  }
+
+  .user-dashboard .menu-icon {
+    width: 35px;
+    margin: 15px 15px 5px 15px;
+    transition: all 1s ease;
+  }
+
+  .user-dashboard main {
+    padding-left: calc(60px + var(--main-padding));
+  }
+}
+
+.username{
+  background-color: transparent;
+  font-size: 1em;
+  margin-top: 1rem;
+  color: white;
+}
+
+

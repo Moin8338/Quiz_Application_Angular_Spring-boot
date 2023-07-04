@@ -1,0 +1,173 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid pt-5">
+
+        <div class="main">
+            <div class="bio-graph-heading">
+                <!-- <button class="edit-btn" mat-mini-fab color="primary" aria-label="Example icon button with a bookmark icon">
+                    <mat-icon>edit</mat-icon>
+                  </button> -->
+                <h3><span>&#8220;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, adipisci?
+                    <span>&#8221;</span>
+                </h3>
+            </div>
+            <div class="profile">
+                <div class="avatar-img">
+                    <img src="../../../assets/faces/marc.jpg" alt="">
+                </div>
+                <div class="about">
+                    <mat-accordion style="width: 100%;" class="mb-2">
+                        <mat-expansion-panel [expanded]="panelOpenState" (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    YOUR CURRUNT DETAIL
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="info" style="display: flex;
+                          flex-wrap: wrap;">
+                                <mat-card>
+                                    <mat-card-subtitle>ID</mat-card-subtitle>
+                                    <mat-card-content>{{user.id}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>USERNAME</mat-card-subtitle>
+                                    <mat-card-content>{{user.username}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>FIRST-NAME</mat-card-subtitle>
+                                    <mat-card-content>{{user.firstname}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>LAST-NAME</mat-card-subtitle>
+                                    <mat-card-content>{{user.lastname}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>EMAIL</mat-card-subtitle>
+                                    <mat-card-content>{{user.email}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>PHONE</mat-card-subtitle>
+                                    <mat-card-content>{{user.phone}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>ENABLE</mat-card-subtitle>
+                                    <mat-card-content>TRUE</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>ROlE</mat-card-subtitle>
+                                    <mat-card-content>{{userRole}}</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>TOTAL ATTEMPTED QUIZE</mat-card-subtitle>
+                                    <mat-card-content>10</mat-card-content>
+                                </mat-card>
+                                <mat-card>
+                                    <mat-card-subtitle>HEIGHEST RANK</mat-card-subtitle>
+                                    <mat-card-content>80</mat-card-content>
+                                </mat-card>
+                            </div>
+                        </mat-expansion-panel>
+
+                        <!-- edit profile section---------------------------------------------
+                        ------------------------------------------------------------------------------
+                    -------------------------------------------------------------------------------------------- -->
+
+
+                        <mat-expansion-panel [expanded]="update_panelOpenState"
+                            (opened)="update_panelOpenState = true && panelOpenState=false"
+                            (closed)="update_panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    UPDATE YOUR DETAILS
+                                </mat-panel-title>
+
+                            </mat-expansion-panel-header>
+
+
+                            <div class="container">
+                                <div class="row mr-2 ml-2" style="padding-top: 20px;">
+                                    <div class="form col-md-6 offset-md-3 text-center">
+                                        <!-- <div class="container text-center">
+                                            <img src="../../../assets/logo.jpg" alt="">
+                                        </div> -->
+                                        <h1 class="text-center title">Update Your Profile</h1>
+                                        <!-- register form -->
+                                        <!-- <p>{{user | json}}</p> -->
+                                        <form (ngSubmit)="formSubmit()" class="text-center">
+                                            <!-- Username Input -->
+                                            <mat-form-field appearance="outline" class="full-width">
+                                                <mat-label>Username</mat-label>
+                                                <input required matInput placeholder="Username" (input)="u_validation()"
+                                                    [(ngModel)]="user.username" name="username">
+                                                <!-- <mat-icon matSuffix color="primary">perm_identity</mat-icon> -->
+                                                <mat-hint class="text-danger">{{map.get("username")}}</mat-hint>
+                                            </mat-form-field>
+
+                                            <!-- Firstname Input -->
+                                            <mat-form-field appearance="outline" class="full-width">
+                                                <mat-label>Firstname</mat-label>
+                                                <input required matInput placeholder="Firstname"
+                                                    [(ngModel)]="user.firstname" name="firstname">
+                                            </mat-form-field>
+
+                                            <!-- Lastname Input -->
+                                            <mat-form-field appearance="outline" class="full-width">
+                                                <mat-label>Lastname</mat-label>
+                                                <input required matInput placeholder="Lastname"
+                                                    [(ngModel)]="user.lastname" name="lastname">
+                                                <!-- <mat-icon matSuffix>name</mat-icon> -->
+                                            </mat-form-field>
+
+                                            <!-- Phone Number Input -->
+                                            <mat-form-field appearance="outline" class="full-width">
+                                                <mat-label>Phone Number</mat-label>
+                                                <input required type="number" matInput placeholder="Phone Number"
+                                                    (input)="phone_validation()" [(ngModel)]="user.phone" name="phone">
+                                                <!-- <mat-icon matSuffix color="primary">phone</mat-icon> -->
+                                                <mat-hint class="text-danger">{{map.get("phone")}}</mat-hint>
+
+                                            </mat-form-field>
+
+                                            <!-- email Input -->
+                                            <mat-form-field appearance="outline" class="full-width">
+                                                <mat-label>Email</mat-label>
+                                                <input required type="email" matInput placeholder="Email"
+                                                    (input)="email_validation()" [(ngModel)]="user.email" name="email">
+                                                <!-- <mat-icon matSuffix color="primary">email</mat-icon> -->
+                                                <mat-hint class="text-danger">{{map.get("email")}}</mat-hint>
+
+                                            </mat-form-field>
+                                            <div class=" container-fluid">
+
+                                                <div class="row text-center" style="align-items: center;">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" disabled="{{submitted}}" mat-raised-button
+                                                            color="primary" class="mr-2">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </mat-expansion-panel>
+
+
+                        <!-- edit profile section End---------------------------------------------
+                        ------------------------------------------------------------------------------
+                    -------------------------------------------------------------------------------------------- -->
+
+
+                    </mat-accordion>
+                    <!-- ----------------------------- -->
+
+                    <!-- <mat-accordion style="width: 100%;">
+                        
+                      </mat-accordion> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

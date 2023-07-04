@@ -1,0 +1,64 @@
+<div class="nav-bar" style="background-color: #3f51b5;">
+  <mat-toolbar fxLayout="row" class="container" style="background: none;color: white;">
+    <mat-icon class="mr-2">task_alt</mat-icon>
+    <span fxFlex>Examportal</span>
+
+    <button mat-button fxHide.xs *ngIf="!isLoggedIn" routerLink="/signin">
+      <mat-icon class="mr-2">login</mat-icon>
+      Login
+    </button>
+    <button mat-button fxHide.xs *ngIf="!isLoggedIn" mat-button routerLink="/signup">
+      <mat-icon class="mr-2">app_registration</mat-icon>
+      Register
+    </button>
+    <button mat-button fxHide.xs *ngIf="isLoggedIn"
+      [routerLink]="login.getUserRole()=='ADMIN' ? '/admin' : '/user-dashboard'">
+      <mat-icon class="mr-2">dashboard</mat-icon>
+      Dashboard
+    </button>
+    <button mat-button fxHide.xs *ngIf="isLoggedIn" routerLink="/admin/profile">
+      <mat-icon class="mr-2">account_circle</mat-icon>
+      Profile
+    </button>
+    <button mat-button fxHide.xs *ngIf="isLoggedIn" routerLink="/signin" (click)="logout()">
+      <mat-icon class="mr-2">logout</mat-icon>
+      Logout
+    </button>
+    <div *ngIf="isLoggedIn" class="profile text-center"
+      style="background-color: rgba(0, 0, 0, .4);border-radius: 20px;">
+      <!-- <a routerLink="" class="mr-2 ml-3">{{user.username}}</a> -->
+      <img src="../../../assets/Myprofile.jpg" alt="">
+    </div>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <!-- dropdown menu----------------------------- -->
+    <mat-menu #dropMenu="matMenu">
+      <ng-container>
+        <button mat-menu-item *ngIf="!isLoggedIn" routerLink="/signin">
+          <mat-icon class="mr-2">login</mat-icon>
+          Login
+        </button>
+        <button mat-menu-item *ngIf="!isLoggedIn" routerLink="/signup">
+          <mat-icon class="mr-2">app_registration</mat-icon>
+          Register
+        </button>
+        <button mat-menu-item *ngIf="isLoggedIn"
+          [routerLink]="login.getUserRole()=='ADMIN' ? '/admin' : '/user-dashboard'">
+          <mat-icon class="mr-2">dashboard</mat-icon>
+          Dashboard
+        </button>
+        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/admin/profile">
+          <mat-icon class="mr-2">account_circle</mat-icon>
+          Profile
+        </button>
+        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/signin" (click)="logout()">
+          <mat-icon class="mr-2">logout</mat-icon>
+          Logout
+        </button>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-menu>
+    <!-- dropdown menu end-------------------------------------------- -->
+  </mat-toolbar>
+</div>

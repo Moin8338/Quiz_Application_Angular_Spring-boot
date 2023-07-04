@@ -1,0 +1,30 @@
+<div class="boostrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <mat-card class="mt-5" style="background-color: white;">
+                    <mat-card-content>
+                        <div
+                            class="card-header card-header-warning card-header-icon d-flex justify-content-start align-item-center">
+                            <h1 style="margin: 0; color: white;">Add Category</h1>
+                        </div>
+                        <form action="" (ngSubmit)="formSubmit()">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Title</mat-label>
+                                <input type="text" name="title" [(ngModel)]="category.title" matInput placeholder="Title" required="true">
+                            </mat-form-field>
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Description</mat-label>
+                                <textarea type="text" name="description" matInput placeholder="Description" [(ngModel)]="category.description" rows="10" required="true"></textarea>
+                            </mat-form-field>
+                            <button _ngcontent-qyw-c98="" mat-raised-button="" class="text-right" type="submit"
+                                fdprocessedid="mz0u3"><span class="mat-button-wrapper">Add</span><span
+                                    matripple="" class="mat-ripple mat-button-ripple"></span><span
+                                    class="mat-button-focus-overlay"></span></button>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

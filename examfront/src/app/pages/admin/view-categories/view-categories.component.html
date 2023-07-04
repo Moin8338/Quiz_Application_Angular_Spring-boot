@@ -1,0 +1,68 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-12 search-header mb-2 mt-2">
+        <div class="search-bar">
+          <input type="search" (keyup)="filterCategories()" [(ngModel)]="filterName" name="filterName" id="">
+          <button type="button">Search</button>
+      </div>
+      </div>
+      <div class="col-md-12 ">
+        <ol class="list-group list-group-light list-group-numbered">
+          <li 
+            class="list-group-item d-flex justify-content-between px-3 border-0 rounded-3 mb-2 align-items-start list-group-item-primary"
+            *ngFor="let c of filtered_categories;" style="cursor: pointer;" [routerLink]="'/admin/view-quizzes/'+c.id+'/'+c.title">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold mb-1">{{c.title}}</div>
+              {{c.description}}
+            </div>
+            <span class="badge badge-primary rounded-pill" routerLink="/admin/add-category" >Update</span>
+          </li>
+        </ol>
+
+        <!-- this section is load when quiz is Not avaliable -->
+        <div class="not-available" *ngIf="filtered_categories.length==0">
+          <h1 style="font-size: 5rem;margin-bottom: 2rem;">404</h1>
+          <p style="font-size: 1.5rem;text-align: center;line-height: 2rem;">No categories Found for ' {{filterName}} '</p>
+          <button routerLink="/admin/view-categories" (click)="this.filterName=null" _ngcontent-qyw-c98="" mat-raised-button=""
+              class="text-right" type="button" fdprocessedid="mz0u3"><span class="mat-button-wrapper">Load All
+                  Quiz<i style="margin-left: 1rem;" class="fa fa-arrow-right"></i></span><span matripple=""
+                  class="mat-ripple mat-button-ripple"></span><span
+                  class="mat-button-focus-overlay"></span></button>
+
+      </div>
+
+
+      </div>
+    </div>
+    <div class="row mt-4 paginator">
+     <div class="col-md-12 d-flex justify-content-between align-item-center">
+       <!-- left part -->
+       <button routerLink="/admin/add-category" _ngcontent-qyw-c98="" mat-raised-button="" class="text-right" type="button" fdprocessedid="mz0u3"><span
+        class="mat-button-wrapper">Add category</span><span matripple=""
+        class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+
+    <!-- right part -->
+    <nav aria-label="...">
+      <ul class="pagination justify-content-end">
+        <li class="page-item disabled">
+          <span class="page-link">Previous</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+          <span class="page-link">
+            2
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+     </div>
+    </div>
+  </div>
+</div>

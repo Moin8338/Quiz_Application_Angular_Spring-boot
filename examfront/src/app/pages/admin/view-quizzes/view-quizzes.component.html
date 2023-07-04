@@ -1,0 +1,87 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-xl-12 search-header mb-3">
+        <mat-select [placeholder]="cTitle" [(value)]="cTitle">
+            <mat-option *ngFor="let c of categories" [value]="c.title"
+                [routerLink]="'/admin/view-quizzes/'+c.id+'/'+c.title">
+                {{ c.title }}
+            </mat-option>
+            <mat-option routerLink="/admin/view-quizzes/0/all-quiz">
+                All Quiz
+            </mat-option>
+        </mat-select>
+        
+        <div class="search-bar">
+            <input type="search" (keyup)="filterQuiz()" [(ngModel)]="filterName" name="filterName" id="">
+            <button type="button">Search</button>
+        </div>
+    </div>
+      <div class="col-md-12">
+        <ol class="list-group list-group-light list-group-numbered cards">
+          <li
+            class="list-group-item card-item d-flex justify-content-between px-3 border-0 rounded-3 mb-2 align-items-start list-group-item-primary"
+            *ngFor="let c of filtered_quiz;">
+            <div class="ms-2 me-auto" style="width: 100%;">
+              <div class="quiz-info" style="width: 100%;">
+                <div class="fw-bold mb-2 d-flex flex-column">
+                  <h3 style="margin: 0; font-weight: 500;">{{c.title}} <span style="font-weight: 300; font-size: .8rem;">({{c.category.title}})</span></h3>
+                  <p style="margin: 0; font-weight: 300;">{{c.description}}</p>
+                </div>
+              </div>
+              <div class="buttons cards-buttons">
+                <button mat-flat-button class="mr-2 card-button-item" [routerLink]="'/admin/view-questions/'+c.id+'/'+c.title">Questions</button>
+                <button mat-flat-button class="mr-2 card-item" [routerLink]="'/admin/quiz/'+c.id">Update</button>
+                <button mat-flat-button class="mr-2 card-item" color="primary" (click)="deleteQuiz(c.id)">Delete</button>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+
+        <!-- this section is load when quiz is Not avaliable -->
+        <div class="not-available" *ngIf="filtered_quiz.length==0">
+          <h1 style="font-size: 5rem;margin-bottom: 2rem;">404</h1>
+          <p style="font-size: 1.5rem;text-align: center;line-height: 2rem;">No Quiz Found for {{cTitle}}
+              category</p>
+          <button routerLink="/admin/view-quizzes/0/all-quiz" _ngcontent-qyw-c98="" mat-raised-button=""
+              class="text-right" type="button" fdprocessedid="mz0u3"><span class="mat-button-wrapper">Load All
+                  Quiz<i style="margin-left: 1rem;" class="fa fa-arrow-right"></i></span><span matripple=""
+                  class="mat-ripple mat-button-ripple"></span><span
+                  class="mat-button-focus-overlay"></span></button>
+
+      </div>
+
+      </div>
+    </div>
+    <div class="row mt-4 paginator">
+      <div class="col-md-12 d-flex justify-content-between align-item-center">
+        <!-- left part -->
+        <button routerLink="/admin/add-quiz" _ngcontent-qyw-c98="" mat-raised-button="" class="text-right" type="button"
+          fdprocessedid="mz0u3"><span class="mat-button-wrapper">Add Quiz</span><span matripple=""
+            class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+
+        <!-- right part
+        <nav aria-label="...">
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+              <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active">
+              <span class="page-link">
+                2
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav> -->
+      </div>
+    </div>
+  </div>
+</div>

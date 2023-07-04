@@ -1,0 +1,223 @@
+<!-- <mat-card>
+    <div class="boostrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 card">
+                    <div class="card " *ngFor="let q of question;let i=index">
+                        <p [innerHTML]="q.content"></p>
+                        <div class="options">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="radio" [(ngModel)]="q.givenAnswer" [name]="i.toString()"
+                                        [value]="q.option1">{{q.option1}}
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio" [(ngModel)]="q.givenAnswer" [name]="i.toString()"
+                                        [value]="q.option2">{{q.option2}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="radio" [(ngModel)]="q.givenAnswer" [name]="i.toString()"
+                                            [value]="q.option3">{{q.option3}}
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="radio" [(ngModel)]="q.givenAnswer" [name]="i.toString()"
+                                            [value]="q.option4">
+                                        {{q.option4}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</mat-card>
+ -->
+
+
+
+
+<header class="header d-flex justify-content-between">
+
+    <div class="left-title">JS Quiz</div>
+    <div class="right-title">Total Questions: <span id="tque">{{question.length}}</span></div>
+
+</header>
+<div class="bootstrap-wrapper" *ngIf="!submitted">
+    <h1>On Going Quiz of <b>{{quiz[0].title}}</b></h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 card p-0">
+                <mat-card>
+                    <mat-stepper orientation="vertical">
+                        <mat-step *ngFor="let que of question;let i=index" style="margin-right: 1rem;">
+                            <ng-template matStepLabel>Question {{i+1}}</ng-template>
+                            <ng-template matStepContent>
+                                <div style="background-color: antiquewhite;padding: .5rem;margin: .5rem;">
+                                    <p [innerHTML]="que.content"
+                                        style="width: 100%;background-color: white;padding: .5rem;border-radius: 4px; font-size: 1.1rem;">
+                                    </p>
+                                    <div class="container-fluid">
+                                        <div class="cards">
+                                            <!-- <div class="d-flex options">
+                                                <input type="radio" class="mt-1 mr-1" [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option1"><span>{{que.option1}}</span>
+                                            </div>
+                                            <div class=" d-flex options">
+                                                <input type="radio" class="mt-1 mr-1" [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option2"><span>{{que.option2}}</span>
+                                            </div>
+                                            <div class=" d-flex options">
+                                                <input type="radio" class="mt-1 mr-1" [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option3"><span>{{que.option3}}</span>
+                                            </div>
+    
+                                            <div class=" d-flex options">
+                                                <input type="radio" class="mt-1 mr-1" [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option4"><span>{{que.option4}}</span>
+                                            </div> -->
+                                            <div *ngIf="que.option1" class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option1" [id]="'f'+i">
+                                                <label class="form-check-label" [for]="'f'+i">
+                                                    <span><b>A. </b>&nbsp;</span>
+                                                    {{que.option1}}
+                                                </label>
+                                            </div>
+                                            <div *ngIf="que.option2" class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option2" [id]="'s'+i">
+                                                <label class="form-check-label" [for]="'s'+i">
+                                                    <span><b>B. </b>&nbsp;</span>
+                                                    {{que.option2}}
+                                                </label>
+                                            </div>
+                                            <div *ngIf="que.option3" class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option3" [id]="'t'+i">
+                                                <label class="form-check-label" [for]="'t'+i">
+                                                    <span><b>C. </b>&nbsp;</span>
+                                                    {{que.option3}}
+                                                </label>
+                                            </div>
+                                            <div *ngIf="que.option4" class="form-check">
+                                                <input class="form-check-input" type="radio"
+                                                    [(ngModel)]="que.givenAnswer" [name]="i.toString()" id=""
+                                                    [value]="que.option4" [id]="'fo'+i">
+                                                <label class="form-check-label" [for]="'fo'+i">
+                                                    <span><b>D. </b>&nbsp;</span>
+                                                    {{que.option4}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <mat-divider></mat-divider>
+                                    <button mat-button matStepperNext color="primary"
+                                        class="m-1 ml-2 mt-2">Next</button>
+                                    <button mat-button matStepperPrevious color="primary"
+                                        class="m-1 ml-2 mt-2">Previous</button>
+                                </div>
+                            </ng-template>
+                        </mat-step>
+                        <mat-step>
+                            <ng-template matStepLabel>Submit Questions</ng-template>
+                            <ng-template matStepContent>
+                                <div style="padding: 1rem;">
+                                    <p>Make Sure you attempt All Question, Please Do a Cross check </p>
+                                    <button mat-raised-button matStepperNext color="primary"
+                                        (click)="SubmitQuiz()">Submit Quiz</button>
+                                </div>
+                            </ng-template>
+                        </mat-step>
+                    </mat-stepper>
+                </mat-card>
+            </div>
+            <div class="col-md-3 text-center">
+                <mat-card class="example-card">
+                    <mat-card-content>
+                        <h2 class="example-h2">Available Time</h2>
+                        <p>Quiz will Automatically Submitted When timer is finished.</p>
+                        <mat-progress-spinner style="margin: auto;" class="example-margin"
+                            [value]="(timer/(this.question.length * 2 * 60))*100">
+                        </mat-progress-spinner>
+                        <h1 class="mt-2">{{getFormattedTime()}}</h1>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- show a Result after submitting a Quiz -->
+<div class="bootstrap-wrapper" *ngIf="submitted">
+    <div class="container result-container" style="margin: 0 auto;">
+        <mat-select [placeholder]="filter_name" (selectionChange)="filterResult()" [(value)]="filter_name"
+            class="bg-secondary text-light p-2">
+            <mat-option value="all" selected>All Question</mat-option>
+            <mat-option value="attempted">Attempted Question</mat-option>
+            <mat-option value="not_attempted">Not Attempted Question</mat-option>
+            <mat-option value="wrong">Wrong Question</mat-option>
+            <mat-option value="right">Right Question</mat-option>
+        </mat-select>
+        <mat-card class="row p-3">
+
+            <div #elseBlock class="col-md-12 card mb-2" *ngFor="let q of filtered_Question;let i=index"
+                [ngStyle]="q.answer==q.givenAnswer ? {'background-color':'antiquewhite;'} : {'background-color':'rgb(240, 130, 130)'}">
+                <div class="d-flex justify-content-between pt-2">
+                    <h3 class="mt-2" style="min-width: 10x0px;">Question {{i+1}} : </h3>
+                    <div class="note mt-2">
+                        <h4 class="text-light" *ngIf="q.givenAnswer=='' || q.givenAnswer==null">You did not Attempt this
+                            question</h4>
+                        <h4 class="text-light" *ngIf="q.answer!=q.givenAnswer && q.givenAnswer != ''">Your Asnwer is
+                            Wrong</h4>
+                        <h4 class="text-success" *ngIf="q.answer==q.givenAnswer">Your Answer is Correct</h4>
+                    </div>
+                </div>
+                <h2 style="width: 100%;background-color: white;padding: .5rem;border-radius: 4px;"
+                    [innerHTML]="q.content"></h2>
+                <mat-divider class="mb-2"></mat-divider>
+                <div class="cards">
+                    <h4 *ngIf="q.option1" class="option"
+                        [ngClass]="q.answer!=q.givenAnswer && q.option1==q.givenAnswer ? 'bg-danger text-light' : ''"
+                        [style]="q.answer==q.option1 ? {'background-color':'#198754','color':'white'} : {}">
+                        {{q.option1}}</h4>
+                    <h4 *ngIf="q.option2" class="option"
+                        [ngClass]="q.answer!=q.givenAnswer && q.option2==q.givenAnswer ? 'bg-danger text-light' : ''"
+                        [style]="q.answer==q.option2 ? {'background-color':'#198754','color':'white'} : {}">
+                        {{q.option2}}</h4>
+                    <h4 *ngIf="q.option3" class="option"
+                        [ngClass]="q.answer!=q.givenAnswer && q.option3==q.givenAnswer ? 'bg-danger text-light' : ''"
+                        [style]="q.answer==q.option3 ? {'background-color':'#198754','color':'white'} : {}">
+                        {{q.option3}}</h4>
+                    <h4 *ngIf="q.option4" class="option"
+                        [ngClass]="q.answer!=q.givenAnswer && q.option4==q.givenAnswer ? 'bg-danger text-light' : ''"
+                        [style]="q.answer==q.option4 ? {'background-color':'#198754','color':'white'} : {}">
+                        {{q.option4}}</h4>
+                </div>
+                <mat-divider></mat-divider>
+
+            </div>
+            <div class="d-flex justify-content-center" *ngIf="filtered_Question.length==0">
+                <h1 class="m-3">No Question found</h1>
+            </div>
+            <div class="buttons mt-2">
+                <button mat-raised-button color="primary" routerLink="/user-dashboard/quizzes/0/all-quiz">
+                    Home
+                </button>
+                <button class="ml-2" (click)="printQuiz()" mat-stroked-button color="primary">
+                    print
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

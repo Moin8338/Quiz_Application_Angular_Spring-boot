@@ -1,0 +1,47 @@
+<app-navbar style="position: fixed;width: 100vw;z-index: 9999;"></app-navbar>
+
+<div class="user-dashboard">
+  <main id="main-doc">
+    <!--=============== NAVBAR ===============-->
+    <nav id="">
+      <mat-icon class="menu-icon">arrow_forward_ios</mat-icon>
+      <header class="nav-header d-flex flex-column">
+        <img src="../../../../assets/Myprofile.jpg" style="width: 200px; border-radius: 50%;margin: 0 auto;" class="mb-2" alt="" srcset="">
+        <a href="" class="username" style="font-weight: 300;">@<span>{{user_details.username}}</span></a>
+      </header>
+      <ul>
+        <li>
+          <a class="nav-link" href="#Introduction">
+            <i class="fa fa-home"></i>
+            <span class="nav-item">Home</span>
+          </a>
+        </li>
+        <li class="nav-link" style="background-color: rgb(63, 81, 181);">
+            <i class="fa fa-arrow-down"></i>
+            <span class="nav-item">Quiz Categories</span>
+        </li>
+        
+        <li *ngFor="let c of categories">
+          <a class="nav-link" [routerLink]="'/user-dashboard/quizzes/'+c.id+'/'+c.title">
+            <i style="margin-left: 1rem;" class="fa fa-home"></i>
+            <span class="nav-item">{{c.title}}</span>
+          </a>
+        </li>
+        <li >
+          <a  class="nav-link" style="bottom: 0;margin: 1rem 0;">
+            <i  class="fa fa-exit"></i>
+            <span class="nav-item">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--=============== ARTICLES ===============-->
+
+    <!--=============== Introduction ===============-->
+
+    <div class="content d-flex justify-content-center" style="padding-top: 70px;">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

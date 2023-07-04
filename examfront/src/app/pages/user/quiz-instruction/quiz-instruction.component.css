@@ -1,0 +1,71 @@
+/* * {
+    font-family: 'Sylfaen';
+    src: url('../../../../assets/fonts/sylfaen.ttf');
+  } */
+
+.instruction-heading {
+    font-size: 1.5rem;
+    border-radius: 5px;
+    color: white;
+    background-image: linear-gradient(225deg, rgb(63, 81, 181) 25%, rgb(84, 182, 202) 76%);
+    padding: .5rem .2rem .5rem .5rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    background: linear-gradient(225deg, rgb(63, 81, 181) 30%, rgb(84, 182, 202) 70%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+/* @counter-style thumbs {
+    system: cyclic;
+    symbols: "\1F44D";
+    symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+    symbols: "\f00c";
+    suffix: " ";
+  }
+li{
+    margin-bottom: .2rem;
+    list-style-type: thumbs;
+} */
+
+ul {
+    --icon-space: 1.5em;
+    list-style: none;
+    padding: 0;
+    padding-left: 1rem;
+  }
+  
+  li {
+    padding-left: var(--icon-space);
+    margin-bottom: .2rem;
+  }
+  
+  li:before {
+    content: "\f00c"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: calc( var(--icon-space) * -1 );
+    width: var(--icon-space);
+    color: rgb(63, 81, 181);
+    font-weight: 200;
+  }
+  /* li:hover li:before{
+    transform: scale(1.2);
+  } */
+
+/* button[type=button] {
+    color: #fff;
+    border-color: #e11b0c;
+    background-color: rgb(63, 81, 181);
+    text-transform: uppercase;
+    box-shadow: 0 14px 26px -12px rgba(63, 81, 181, 0.42), 0 4px 23px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(244 67 54 / 20%);
+} */
+
+.card {
+    padding: 1rem;
+    max-width: 900px;
+}

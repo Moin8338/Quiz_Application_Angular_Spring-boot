@@ -1,0 +1,97 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mr-2 ml-2" style="padding-top: 20px;">
+            <div class="form col-md-6 offset-md-3 text-center">
+                <!-- <div class="container text-center">
+                    <img src="../../../assets/logo.jpg" alt="">
+                </div> -->
+                <h1 class="text-center title">Register Here</h1>
+                <!-- register form -->
+                <!-- <p>{{user | json}}</p> -->
+                <form (ngSubmit)="formSubmit()" class="text-center">
+                    <!-- Username Input -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input required matInput placeholder="Username" (input)="u_validation()"
+                            [(ngModel)]="user.username" name="username">
+                        <!-- <mat-icon matSuffix color="primary">perm_identity</mat-icon> -->
+                        <mat-hint class="text-danger">{{map.get("username")}}</mat-hint>
+                    </mat-form-field>
+
+                    <!-- Firstname Input -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Firstname</mat-label>
+                        <input required matInput placeholder="Firstname" [(ngModel)]="user.firstname" name="firstname">
+                    </mat-form-field>
+
+                    <!-- Lastname Input -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Lastname</mat-label>
+                        <input required matInput placeholder="Lastname" [(ngModel)]="user.lastname" name="lastname">
+                        <!-- <mat-icon matSuffix>name</mat-icon> -->
+                    </mat-form-field>
+
+                    <!-- Phone Number Input -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Phone Number</mat-label>
+                        <input required type="number" matInput placeholder="Phone Number" (input)="phone_validation()"
+                            [(ngModel)]="user.phone" name="phone">
+                        <!-- <mat-icon matSuffix color="primary">phone</mat-icon> -->
+                        <mat-hint class="text-danger">{{map.get("phone")}}</mat-hint>
+
+                    </mat-form-field>
+
+                    <!-- email Input -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input required type="email" matInput placeholder="Email" (input)="email_validation()"
+                            [(ngModel)]="user.email" name="email">
+                        <!-- <mat-icon matSuffix color="primary">email</mat-icon> -->
+                        <mat-hint class="text-danger">{{map.get("email")}}</mat-hint>
+
+                    </mat-form-field>
+
+                    <!-- password Input -->
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input required [type]="passwordVisibility ? 'text' : 'password'" (input)="pass_validation()"
+                            matInput placeholder="Password" [(ngModel)]="user.password" name="password">
+
+                        <!-- password visibility icon if passwordVisibility==true -->
+                        <mat-icon mat-icon matSuffix color="primary" (click)="passwordVisibilityToggle()"
+                            *ngIf="!passwordVisibility;else other_content">visibility_off</mat-icon>
+                            
+                        <!-- password visibility_off icon if passwordVisibility==false -->
+                        <ng-template #other_content>
+                            <mat-icon mat-icon matSuffix color="primary" (click)="passwordVisibilityToggle()"
+                                *ngIf="passwordVisibility">visibility</mat-icon>
+                        </ng-template>
+
+                        <mat-hint class="text-danger">{{map.get("password")}}</mat-hint>
+
+                    </mat-form-field>
+
+                    <div class="container container-fluid">
+
+                        <div class="row text-center" style="align-items: center;">
+                            <div class="col-md-12">
+                                <button type="submit" disabled="{{submitted}}" mat-raised-button color="primary"
+                                    class="mr-2">Register</button>
+                                <button type="reset" mat-stroked-button color="primary"
+                                    class="clear_form" id="Clear">Clear</button>
+                            </div>
+                            <div class="col-md-12 m-3">
+                                <a routerLink="/signin" rel="noopener noreferrer">Login here ?</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

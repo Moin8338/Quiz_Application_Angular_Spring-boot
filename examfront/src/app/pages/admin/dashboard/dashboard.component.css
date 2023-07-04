@@ -1,0 +1,30 @@
+.bootstrap-wrapper {
+    padding: 70px 1rem 0 0;
+}
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.content {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    border-radius: 5px;
+    -webkit-box-shadow: 7px 5px 12px -2px #3f51b5;
+    -moz-box-shadow: 7px 5px 12px -2px #3f51b5;
+    box-shadow: 7px 5px 12px -2px #3f51b5;
+}
+
+@media screen and (max-width: 885px) {
+    .bootstrap-wrapper {
+        padding: 70px 0rem 0rem 0rem;
+    }
+    .content{
+        margin: 1rem 0;
+    }
+}

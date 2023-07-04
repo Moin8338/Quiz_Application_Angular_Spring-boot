@@ -1,0 +1,28 @@
+.full-width {
+    width: 100%;
+}
+
+.blue-snackbar {
+    /* background: #2196F3; */
+    background: linear-gradient(225deg, rgb(63, 81, 181) 30%, rgb(84, 182, 202) 70%);
+}
+.title{
+    color: #606060;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 30px auto;
+}
+.bootstrap-wrapper {
+    min-height: 100vh;
+    background-color: #3598dc;
+    padding-top: 60px;
+}
+.form{
+    padding: 10px 25px 25px 25px;
+    background: #fff;
+    border-radius: 8px;
+}
+mat-icon{
+    color: #3598dc!important;
+}
+/* ------------------media Query-------------- */

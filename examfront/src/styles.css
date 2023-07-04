@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
+}
+
+mat-slide-toggle label {
+    margin-bottom: 0rem;
+}
+
+mat-checkbox label {
+    margin-bottom: 0rem;
+}
+mat-stepper .mat-vertical-content{
+    padding: 0;
+}
+
+.form-check-input{
+    margin-left: 1rem;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+:root {
+    --background: #292C4A;
+    --background-dark: #272944;
+    --foreground: rgb(255, 255, 255);
+    --accent-color: rgb(216, 191, 228);
+
+    --nav-width-collapsed: 60px;
+    --nav-width: 300px;
+    --main-padding: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+}
+
+.truncate {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

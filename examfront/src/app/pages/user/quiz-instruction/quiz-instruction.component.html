@@ -1,0 +1,57 @@
+<div class="boostrap-wrapper">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-12 card">
+                <button mat-icon-button class="mb-2"
+                    [routerLink]="'/user-dashboard/quizzes/'+quiz[0].category.id+'/'+quiz[0].category.title"><mat-icon>arrow_back</mat-icon></button>
+                <h1 class="instruction-heading card-heading">Quiz Details</h1>
+
+                <div class="">
+                    <h2 class="display-1">{{quiz[0].title}}</h2>
+                    <p>{{quiz[0].description}}</p>
+                </div>
+                <mat-divider></mat-divider>
+                <h1 class="instruction-heading mt-2">Quiz Instructions</h1>
+                <div class="">
+                    <ul>
+                        <li>There are <b>{{quiz[0].numberOfQuestion}}</b> questions.</li>
+                        <li>You have <b>{{quiz[0].numberOfQuestion * 2}} Minutes </b>minutes to complete the Quiz.</li>
+                        <li>Time to Complete each question is <b>2 Minutes.</b></li>
+                        <li>You can Attemp the quiz any number of Time.</li>
+                        <li>Each question carries <b>{{quiz[0].maMarks / quiz[0].numberOfQuestion}}</b>.</li>
+                        <li>Maximum marks of quiz is <b>{{quiz[0].maMarks}}</b>.</li>
+                        <li>No nagative markings for wrongs one's.</li>
+                        <li>All Question are <b>MCQ</b> Formate.</li>
+
+                    </ul>
+                </div>
+                <mat-divider></mat-divider>
+                <h1 class="instruction-heading mt-2">Attempting Quiz</h1>
+                <div class="">
+                    <ul>
+                        <li>Click <b>Start</b> to start a Quiz.</li>
+                        <li>The time will start the moment you click on start button.</li>
+                        <li>You can not resume this quiz, if intruppted due to any reason.</li>
+                        <li>Click on <b>next</b> button to move next Question.</li>
+                        <li>Click the <b>submit</b> button after a completing quiz, to submit a quiz.</li>
+                        <li>Report of test is automatically generated in the form if PDF copy.</li>
+
+                    </ul>
+                </div>
+                <mat-divider></mat-divider>
+                <mat-checkbox class="example-margin mt-2 mb-2" color="primary" name="checked" [(ngModel)]="checked">Read All
+                    Details</mat-checkbox>
+                <div class="card-buttons mt-2">
+
+
+                    <button (click)="startQuiz()" color="primary" type="button" [disabled]="!checked" mat-raised-button
+                        [matTooltip]="checked ? 'Start Quiz' : 'Select The Checkbox'"
+                        aria-label="Button that displays a tooltip when focused or hovered over"><span
+                            class="mat-button-wrapper">Start<i style="margin-left: 1rem;"
+                                class="fa fa-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

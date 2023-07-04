@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+.search-bar{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+.search-bar input{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    border: none;
+    background: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.search-bar button{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 1rem;
+    background-color: #3570dc;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    transition: all 2s ease;
+}
+
+.search-bar input:focus{
+    box-shadow: 1px 1px 5px 2px white;
+}
+.search-bar button:active{
+    /* transform: translate(20px); */
+    transform: scale(2);
+}
+span.badge{
+    cursor: pointer;
+    padding: .5rem;
+}
+span.badge:hover{
+    background-color: white;
+    color: #007bff;
+}
+
+button[type=button]{
+color: #fff;
+    /* background-color: #f33527; */
+    border-color: #e11b0c;
+    background-color: rgb(143, 10, 167);
+    text-transform: uppercase;
+    box-shadow: 0 14px 26px -12px rgba(181, 37, 206, 0.42), 0 4px 23px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(244 67 54 / 20%);
+}
+
+
+
+.not-available {
+    background-image: linear-gradient(225deg, rgb(63, 81, 181) 25%, rgb(84, 182, 202) 76%);
+    color: #fff;
+    margin: 2rem 0 0 0;
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60vh;
+    align-items: center;
+}
+
+.search-header {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(225deg, rgb(63, 81, 181) 25%, rgb(84, 182, 202) 76%);padding: 1rem;border-radius: 5px;
+}

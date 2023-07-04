@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+*{
+	font-family: 'Lato', sans-serif;
+}
+.header {
+    background: linear-gradient(225deg, rgb(63, 81, 181) 30%, rgb(84, 182, 202) 70%);
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.bootstrap-wrapper {
+    margin: 0 10px 0px 30px;
+    margin-top: 80px;
+    /* max-width: 1200px; */
+    padding: 1rem 0;
+}
+
+
+.option{
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    background-color: #F8F9FA;
+}
+h2 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .0125em;
+    margin: 0 0 16px;
+}
+
+.card{
+    border: none;
+}
+
+.cards {
+    display: grid;
+    gap: .3rem;
+}
+
+.card-item {}
+
+.cards-buttons {
+    display: grid;
+    gap: .5rem;
+}
+
+@media (min-width: 600px) {
+    .header {
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+    }
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media (min-width: 1150px){
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
+

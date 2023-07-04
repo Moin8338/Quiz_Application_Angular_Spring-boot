@@ -1,0 +1,131 @@
+.full-width {
+    width: 100%;
+}
+
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 0rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+  
+  .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.about::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.about{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.main{
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+.main .bio-graph-heading {
+    background: #fbc02d;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    padding: 40px 0;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+}
+.main .bio-graph-heading h3{
+    width: 100%;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.main .bio-graph-heading h3 span{
+    font-size: 1.8rem;
+}
+.main .profile{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 4px;
+    /* -webkit-box-shadow: 7px 5px 12px -2px #3f51b5;
+    -moz-box-shadow: 7px 5px 12px -2px #3f51b5;
+    box-shadow: 7px 5px 12px -2px #3f51b5; */
+}
+.main .profile .avatar-img{
+    /* max-width: 394px;
+    min-width: 394px; */
+}
+.main .profile .avatar-img img{
+    width: 100%;
+    width: 100%;
+    border-radius: 0 0 0 4px;
+}
+.main .profile .about{
+    width: calc(100% - 394px);
+    height: 394px;
+    overflow-y: auto;
+    border-radius: 0 0 4px 0; 
+    padding: 1rem .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* text-align: center; */
+}
+.main .profile .about mat-card{
+    flex: 45%;
+    margin: .2rem;
+}
+.main .profile .about mat-card mat-card-content{
+    padding: 10px 0 10px 10px;
+    height: 100%;
+    
+}
+.main .profile .about mat-card mat-card-subtitle{
+    width: 100%;
+    background-color: rgb(63, 81, 181,.8);
+    padding-left: .5rem;
+    color: white;
+    border-radius: 4px 4px 0 0;
+}
+/* .edit-btn{
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%,-50%);
+} */
+/* -------------media query--------- */
+@media screen and (max-width: 1200px) {
+    .main .profile .about mat-card{
+        flex: 100%;
+    }
+  }
+@media screen and (max-width: 885px) {
+    .main .profile {
+        flex-direction: column;
+    }
+    .main .profile .avatar-img{
+        max-width: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+    .main .profile .about{
+        width: 100%;
+        height: auto;
+    }
+    
+  }

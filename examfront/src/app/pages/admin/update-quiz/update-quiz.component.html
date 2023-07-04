@@ -1,0 +1,64 @@
+<div class="boostrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <mat-card class="mt-5 mb-5" style="background-color: white;">
+                    <mat-card-content>
+                        <div
+                            class="card-header card-header-warning card-header-icon d-flex justify-content-start align-item-center">
+                            <h1 style="margin: 0; color: white;">Update Quiz</h1>
+                        </div>
+                        <form action="" *ngIf="quiz" (ngSubmit)="formSubmit()">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Title</mat-label>
+                                <input type="text" name="title" [(ngModel)]="quiz.title" matInput placeholder="Title"
+                                    required="true">
+                            </mat-form-field>
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Description</mat-label>
+                                <textarea type="text" name="description" matInput placeholder="Description"
+                                    [(ngModel)]="quiz.description" rows="10" required="true"></textarea>
+                            </mat-form-field>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="w100" appearance="outline">
+                                        <mat-label>Max Marks</mat-label>
+                                        <input type="text" name="maMarks" [(ngModel)]="quiz.maMarks" matInput
+                                            placeholder="Maximum Marks" required="true">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="w100" appearance="outline">
+                                        <mat-label>Number Of Question</mat-label>
+                                        <input type="text" name="numberOfQuestion" [(ngModel)]="quiz.numberOfQuestion" matInput
+                                            placeholder="Number Of Question" required="true">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <mat-slide-toggle class="example-margin mb-3" name="active" [(ngModel)]="quiz.active" color="primary" >
+                                Publish Status
+                            </mat-slide-toggle>
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-select placeholder="Category" name="category" [(value)]="quiz.category.id">
+                                    <mat-option  *ngFor="let c of categories" [value]="c.id">
+                                        {{ c.title }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <button _ngcontent-qyw-c98="" mat-raised-button="" class="text-right" type="submit"
+                                fdprocessedid="mz0u3"><span class="mat-button-wrapper">update</span><span matripple=""
+                                    class="mat-ripple mat-button-ripple"></span><span
+                                    class="mat-button-focus-overlay"></span></button>
+                                    <button _ngcontent-qyw-c98="" [routerLink]="'/admin/view-quizzes/'+quiz.category.id+'/'+quiz.category.title" mat-raised-button="" class=" ml-2 text-right" type="button"
+                                    fdprocessedid="mz0u3"><span class="mat-button-wrapper">View Quiz List</span><span matripple=""
+                                        class="mat-ripple mat-button-ripple"></span><span
+                                        class="mat-button-focus-overlay"></span></button>
+                                        
+                        </form>
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-header class="bg-secondary">
+        <h2 style="color: white;">Menu</h2>
+    </mat-card-header>
+    <mat-card-content>
+
+        <mat-action-list>
+            <button mat-list-item routerLink="/admin/">
+                <mat-icon matListItemIcon>home</mat-icon>
+                <div matListItemTitle>Home</div>
+            </button>
+            <button mat-list-item routerLink="/admin/profile">
+                <mat-icon matListItemIcon>account_circle</mat-icon>
+                <div matListItemTitle>Profile</div>
+            </button>
+            <button mat-list-item routerLink="/admin/view-categories">
+                <mat-icon matListItemIcon>shopping_cart</mat-icon>
+                <div matListItemTitle>Categories</div>
+            </button>
+            <button mat-list-item routerLink="/admin/add-category">
+                <mat-icon matListItemIcon>add_shopping_cart</mat-icon>
+                <div matListItemTitle>Add Categories</div>
+            </button>
+            <button mat-list-item routerLink="/admin/view-quizzes/0/all-quiz">
+                <mat-icon matListItemIcon >quize</mat-icon>
+                <div matListItemTitle>Quizzes</div>
+            </button>
+            <button mat-list-item routerLink="/admin/add-quiz">
+                <mat-icon matListItemIcon>add</mat-icon>
+                <div matListItemTitle>Add Quize</div>
+            </button>
+            <button mat-list-item (click)="logout()">
+                <mat-icon matListItemIcon>logout</mat-icon>
+                <div matListItemTitle>Logout</div>
+            </button>
+        </mat-action-list>
+    </mat-card-content>
+</mat-card>

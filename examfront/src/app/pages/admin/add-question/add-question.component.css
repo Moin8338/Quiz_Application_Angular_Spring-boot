@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+.w100 {
+    width: 100%;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+
+mat-card-content .card-header {
+    border-radius: 3px;
+    margin-top: -30px;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: rgb(143, 10, 167);
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgba(181, 37, 206, 0.4);
+}
+
+mat-card-content form button[type=submit] {
+    color: #fff;
+    /* background-color: #f33527; */
+    border-color: #e11b0c;
+    background-color: rgb(143, 10, 167);
+    text-transform: uppercase;
+    box-shadow: 0 14px 26px -12px rgba(181, 37, 206, 0.42), 0 4px 23px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(244 67 54 / 20%);
+}
+
+
+

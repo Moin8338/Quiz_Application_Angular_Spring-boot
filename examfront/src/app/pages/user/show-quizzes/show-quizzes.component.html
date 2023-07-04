@@ -1,0 +1,63 @@
+<main>
+    <div class="container" >
+        <!-- style="width: min(100% - 30px, 1200px);" -->
+
+        <div class="row">
+            <div class="quiz-container col-xl-12" style="padding: 0 !important;">
+                <div class="container search">
+                    <div class="row">
+                        <div class="col-xl-12 search-header mb-3">
+                            <mat-select [placeholder]="cat_title" [(value)]="cat_title">
+                                <mat-option *ngFor="let c of categories" [value]="c.title"
+                                    [routerLink]="'/user-dashboard/quizzes/'+c.id+'/'+c.title">
+                                    {{ c.title }}
+                                </mat-option>
+                                <mat-option routerLink="/user-dashboard/quizzes/0/all-quiz">
+                                    All Quiz
+                                </mat-option>
+                            </mat-select>
+                            
+                            <div class="search-bar">
+                                <input type="search" (keyup)="filterQuiz()" [(ngModel)]="filterName" name="filterName" id="">
+                                <button type="button">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- this section is load when quiz is avaliable -->
+                <div class="quizzes">
+                    <div class="container" style="padding: 0 !important;" *ngIf="quiz.length!=0">
+                        <div class="d-grid gap-1 justify-content-start cards">
+                            <div class="card" *ngFor="let q of filtered_quiz">
+                                <h1 style="width: 100%;">{{q.title}}</h1>
+                                <p class="truncate">{{q.description}}</p>
+                                <mat-divider style="margin: .5rem 0;"></mat-divider>
+                                <div class="cards-buttons">
+                                    <button [routerLink]="'/user-dashboard/quiz-intsruction/'+q.id" _ngcontent-qyw-c98="" mat-raised-button=""
+                                        class="text-right" type="button" fdprocessedid="mz0u3"><span
+                                            class="mat-button-wrapper">Start<i style="margin-left: 1rem;" class="fa fa-arrow-right"></i></span><span matripple=""
+                                            class="mat-ripple mat-button-ripple"></span><span
+                                            class="mat-button-focus-overlay"></span></button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- this section is load when quiz is Not avaliable -->
+                <div class="not-available" *ngIf="filtered_quiz.length==0">
+                    <h1 style="font-size: 5rem;margin-bottom: 2rem;">404</h1>
+                    <p style="font-size: 1.5rem;text-align: center;line-height: 2rem;">No Quiz Found for {{cat_title}}
+                        category</p>
+                    <button routerLink="/user-dashboard/quizzes/0/all-quiz" _ngcontent-qyw-c98="" mat-raised-button=""
+                        class="text-right" type="button" fdprocessedid="mz0u3"><span class="mat-button-wrapper">Load All
+                            Quiz<i style="margin-left: 1rem;" class="fa fa-arrow-right"></i></span><span matripple=""
+                            class="mat-ripple mat-button-ripple"></span><span
+                            class="mat-button-focus-overlay"></span></button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>

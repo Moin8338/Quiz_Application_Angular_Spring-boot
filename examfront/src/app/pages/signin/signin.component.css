@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    /* background: #3598dc; */
+    background: linear-gradient(225deg, rgb(63, 81, 181) 30%, rgb(84, 182, 202) 70%);
+    position: relative;
+    padding-top: 60px;
+}
+
+.cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25%;
+    height: 400px;
+    padding: 10px 25px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+.user,
+.pass {
+    text-align: center;
+    display: block;
+}
+
+h1 {
+    color: #606060;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 30px auto;
+}
+
+.user,
+.pass,
+.login {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+
+.user,
+.pass {
+    background: #ecf0f1;
+}
+
+.login {
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    background: #3598dc;
+    margin-bottom: 15px;
+    transition: background 0.4s ease;
+}
+
+.login:hover {
+    background: #3570dc;
+}
+
+@media only screen and (min-width : 280px) {
+    .cont {
+        width: 90%
+    }
+}
+
+@media only screen and (min-width : 480px) {
+    .cont {
+        width: 60%
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .cont {
+        width: 40%
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    .cont {
+        width: 30%
+    }
+}
+
+h2 {
+    color: #fff;
+    margin-top: 25px;
+}

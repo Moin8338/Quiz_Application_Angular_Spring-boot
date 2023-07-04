@@ -1,0 +1,83 @@
+<!-- <div class="boostrap-wrapper">
+    <div class="container">
+        
+    </div>
+</div> -->
+
+<!-- <div class="row">
+    <div class="w100 d-flex justify-content-center">
+        
+    </div>
+</div> -->
+<mat-card class="mt-5 mb-5" style="background-color: white;max-width: 1000px; margin: 0 auto;">
+    <mat-card-content>
+        <div class="card-header card-header-warning card-header-icon d-flex justify-content-start align-item-center">
+            <h1 style="margin: 0; color: white;">Add Question to <b>{{question.quiz.title}} Quiz</b></h1>
+        </div>
+        <form action="" (ngSubmit)="formSubmit()">
+            <!-- <mat-form-field class="w100" appearance="outline">
+                <mat-label>Question Content</mat-label>
+                <textarea type="text" name="Content" matInput placeholder="Content" [(ngModel)]="question.content"
+                    rows="10" required="true"></textarea>
+            </mat-form-field> -->
+            <ckeditor [editor]="Editor" name="Content"  [(ngModel)]="question.content" data="">
+            </ckeditor>
+
+            <div class="row" style="margin-top: 1.5rem;">
+                <div class="col-md-6">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Option1</mat-label>
+                        <input type="text" name="option1" [(ngModel)]="question.option1" matInput placeholder="Option1"
+                            required="true">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Option2</mat-label>
+                        <input type="text" name="Option2" [(ngModel)]="question.option2" matInput placeholder="Option2"
+                            required="true">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Option3</mat-label>
+                        <input type="text" name="Option3" [(ngModel)]="question.option3" matInput placeholder="Option3"
+                            required="true">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w100" appearance="outline">
+                        <mat-label>Option4</mat-label>
+                        <input type="text" name="Option4" [(ngModel)]="question.option4" matInput placeholder="Option4"
+                            required="true">
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- answer field -->
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Select Answer</mat-label>
+                <mat-select required [(value)]="question.answer">
+                    <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</mat-option>
+                    <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
+                    <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
+                    <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="w100" appearance="outline">
+                <mat-label>Quiz</mat-label>
+                <input readonly type="text" name="Quiz" [(ngModel)]="question.quiz.title" matInput placeholder="Quiz"
+                    required="true">
+            </mat-form-field>
+            <button _ngcontent-qyw-c98="" mat-raised-button="" class="text-right" type="submit"
+                fdprocessedid="mz0u3"><span class="mat-button-wrapper">Add</span><span matripple=""
+                    class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+            <button _ngcontent-qyw-c98="" style="display: none;" mat-raised-button="" id="Clear"
+                class="Clear text-right" type="reset" fdprocessedid="mz0u3"><span
+                    class="mat-button-wrapper">Clear</span><span matripple=""
+                    class="mat-ripple mat-button-ripple"></span><span class="mat-button-focus-overlay"></span></button>
+        </form>
+    </mat-card-content>
+</mat-card>
